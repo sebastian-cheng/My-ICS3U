@@ -182,6 +182,7 @@ private static String takeCard(String hand, String victimHand, String requestedC
 
 private static String compRequestedCard(int computer) {
    String hand = "";
+   //assigns a hand based on which computer it is
         if(computer == 1)
             hand = compOneHand;
         if(computer == 2)
@@ -212,8 +213,9 @@ private static int playerRequestedCard() {
       }
    }
 }
-
-      private static String getVictim(String playerHand, String compOneHand, String compTwoHand, String compThreeHand, int player) {
+//gets everyone's person to steal from 
+private static String getVictim(String playerHand, String compOneHand, String compTwoHand, String compThreeHand, int player) {
+         
          if(player == 1){
             while(true){
             System.out.println("Who would you like to take from? (Please type comp1, comp2 or comp3): ");
@@ -257,20 +259,25 @@ private static int playerRequestedCard() {
       }
       return null;
       }
-
-      private static String ridCards(String hand, int player){
+//removes pairs of cards
+private static String ridCards(String hand, int player){
+   //sets all 10's in the hand to t's for simplicity
          hand = changeTens(hand);
          int count = 0;
+         //iterates though each card 
         for (int i = 0; i < hand.length() - 1   ; i+=2) {
             String c = hand.charAt(i) + "";
             String temp = hand.substring(hand.indexOf(c) + 2); // string without current card and everything before it
             if(temp.contains(c)) {
                 count++;
+                //makes hand without the pair of cards 
                 hand = hand.substring(0, i) + temp.substring(0, temp.indexOf(c)) + temp.substring(temp.indexOf(c) + 2);
                 i = RESET_CARDS; // resets the loop to make i = 0 again
             }
         } 
+        //turns the t's back into 10's 
         hand = hand.replace("t" , "10");
+        //updates the score 
         if(player == 1) {
             PLAYER1_SCORE += count;
             return hand;
@@ -288,17 +295,17 @@ private static int playerRequestedCard() {
       }
      
 
-
-   private static String changeTens(String hand) {
-      String newHand = "";
-      for(int i = 0; i < hand.length() - 1; i += 2){
-         if(hand.substring(i, i + 1).equals("1"))
+//changes all the 10's in the hand to t's
+private static String changeTens(String hand) {
+   String newHand = "";
+   for(int i = 0; i < hand.length() - 1; i += 2){
+      if(hand.substring(i, i + 1).equals("1"))
          newHand = hand.replace("10", "t");
       }
-      return newHand;
-      }
-
-   private static void displayHand(String cards, boolean isHidden, String label, int score) {
+   return newHand;
+}
+//displays the hand or doesn't depending on if it's a computer or a player 
+private static void displayHand(String cards, boolean isHidden, String label, int score) {
         String result = label + "(" + score + "): ";
         if(isHidden){
             for(int i = 0; i < cards.length() / 3; i++){
@@ -310,36 +317,36 @@ private static int playerRequestedCard() {
         
         System.out.println(result);
     }
-
-    private static String getCard() {
-        return getValue() + getSuit();
-    }
-
-    private static String getSuit() {
-        int iSuit = (int) (Math.random() * NUM_SUITS) + 1;
-      if (iSuit == 1)
-         return "H";
-      else if (iSuit == 2)
-         return "S";
-      else if (iSuit == 3)
-         return "C";
-      else
-         return "D";
-
-    }
-
-    private static String getValue() {
-        int iValue = (int) (Math.random() * NUM_VALUES) + 1;
-      if (iValue == 1)
-         return "A";
-      else if (iValue == 11)
-         return "J";
-      else if (iValue == 12)
-         return "Q";
-      else if (iValue == 13)
-         return "K";
-      else
-         return "" + iValue;
+//combines the value and suit 
+private static String getCard() {
+   return getValue() + getSuit();
+}
+    //randomly generates a suit for the card 
+private static String getSuit() {
+   int iSuit = (int) (Math.random() * NUM_SUITS) + 1;
+   if (iSuit == 1)
+      return "H";
+   else if (iSuit == 2)
+      return "S";
+   else if (iSuit == 3)
+      return "C";
+   else
+      return "D";
 
     }
+    //randomly generates a value for the card 
+private static String getValue() {
+   int iValue = (int) (Math.random() * NUM_VALUES) + 1;
+   if (iValue == 1)
+      return "A";
+   else if (iValue == 11)
+      return "J";
+   else if (iValue == 12)
+      return "Q";
+   else if (iValue == 13)
+      return "K";
+   else
+      return "" + iValue;
+
+   }
 }
