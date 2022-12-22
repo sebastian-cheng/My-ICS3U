@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch test2",
+            "request": "launch",
+            "mainClass": "assignments.test2",
+            "projectName": "Unit Four - Repetition with Loops_b832fc6"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "assignments.test",
+            "projectName": "Unit Four - Repetition with Loops_b832fc6"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Blackjack",
+            "request": "launch",
+            "mainClass": "assignments.Blackjack",
+            "projectName": "Unit Four - Repetition with Loops_b832fc6"
+        },
+        {
+            "type": "java",
+            "name": "Launch GoFish",
+            "request": "launch",
+            "mainClass": "assignments.GoFish",
+            "projectName": "Unit Four - Repetition with Loops_b832fc6"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hangman",
+            "request": "launch",
+            "mainClass": "assignments.Hangman",
+            "projectName": "Unit Four - Repetition with Loops_b832fc6"
+        },
+        {
+            "type": "java",
+            "name": "Launch WhileLoopsExamples",
+            "request": "launch",
+            "mainClass": "day1.WhileLoopsExamples",
+            "projectName": "Unit Four - Repetition with Loops_b832fc6"
+        },
+        {
+            "type": "java",
+            "name": "Launch ForLoopsExamples",
+            "request": "launch",
+            "mainClass": "day2.ForLoopsExamples",
+            "projectName": "Unit Four - Repetition with Loops_b832fc6"
+        },
+        {
+            "type": "java",
+            "name": "Launch ComparingObjects",
+            "request": "launch",
+            "mainClass": "day3.ComparingObjects",
+            "projectName": "Unit Four - Repetition with Loops_b832fc6"
+        }
+    ]
+}

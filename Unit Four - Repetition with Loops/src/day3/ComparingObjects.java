@@ -7,8 +7,8 @@ public class ComparingObjects {
 
     public static void main(String[] args) {
         exampleOne();
-      exampleTwo();
-      exampleThree();
+      // exampleTwo();
+      // exampleThree();
 
    }
 
@@ -21,6 +21,9 @@ public class ComparingObjects {
    private static void exampleOne() {
     String s1 = new String("Hello");
     String s2 = new String("Hello");
+    if(s1.equals(s2)){
+      System.out.println("ahaha");
+    }
 
    }
 }
