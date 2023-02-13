@@ -20,9 +20,9 @@ public class IteratingArrays {
     }
 
  
-    private static int linearSearch(int[] arr, int i) {
+    private static int linearSearch(int[] arr, int num) {
         for (int j = 0; j < arr.length; j++) {
-            if(arr[j] == i)
+            if(arr[j] == num)
             return j;
 
         }
