@@ -24,9 +24,8 @@ public class IteratingArrays {
         for (int j = 0; j < arr.length; j++) {
             if(arr[j] == num)
             return j;
-
         }
-        return -1;
+        return-1;
     }
 
 
